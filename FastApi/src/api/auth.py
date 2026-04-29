@@ -18,7 +18,7 @@ async def register_user(
     await db.commit()
     return {"status": "OK"}
 
- 
+
 @router.post("/login")
 async def login_user(
         db: DBDep,
