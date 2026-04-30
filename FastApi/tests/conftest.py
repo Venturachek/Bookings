@@ -1,6 +1,5 @@
 import asyncio
-from pathlib import Path
-
+from unittest import mock
 from fastapi_cache import FastAPICache
 from fastapi_cache.backends.inmemory import InMemoryBackend
 from httpx import AsyncClient, ASGITransport
