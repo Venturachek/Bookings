@@ -65,4 +65,10 @@ async def add_user(ac, async_main):
                 json={"email": "email123@gmail.com",
                       "password": "qwerty1234"}
         )
-
+@pytest.fixture(scope="session")
+async def login_user(add_user, ac):
+    await ac.post("/auth/login",
+                  json={"email": "email123@gmail.com",
+                      "password": "qwerty1234"})
+    assert ac.cookies["access_token"]
+    yield ac
